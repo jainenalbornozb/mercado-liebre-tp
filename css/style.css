@@ -1,0 +1,50 @@
+/* Estilo para el logo */
+.logo {
+    width: 200px;
+    height: 100px;
+  }
+/* Estilos para la barra de navegación*/
+.main-header {
+    background-color: #EAC926 ;
+    font-family: 'roboto';
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+  }
+i{
+  font-size: 2em;
+}
+ul{
+  list-style: none;
+}
+/* Estilo para el footer */
+.footer{
+    font-family: 'roboto';
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* Estilo de los íconos */
+.my-icon{
+  color:  #1259c3;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .burger-menu{
+      display: flex;
+      justify-content: center;
+  }
+  .main-header{
+    width: 100%;
+  }
+  
+}
+@media (min-width: 769px) {
+  .burger-menu {
+      display: none;
+  }
+}

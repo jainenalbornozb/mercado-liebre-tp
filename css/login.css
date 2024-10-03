@@ -1,0 +1,17 @@
+main{
+    font-family: 'roboto';
+    background-color: #ebebeb;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.btn-submit{
+    background-color: #03264C;
+    color: #ebebeb    ;
+}
