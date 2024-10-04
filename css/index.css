@@ -1,5 +1,31 @@
 .contenido {
     font-family: 'roboto';
+    width: 100%;
+    margin: 0 auto; 
+    background-color: #ebebeb;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.detalles-articulo {
+    border-top: 1px solid #ebebeb;  /* Borde superior de 1px, sólido y color #ebebeb */
+    padding: 15px;                  /* Separación del contenido respecto a los bordes (15px en cada lado) */
+    margin-top: 5px;
+    background-color: white;               /* Espaciado superior entre la imagen y la caja */
+}
+.icono-camion{
+    color: #39b54a;
+    border-radius: 50%;
+    border: 2px solid #39b54a;
+    width: 50px; 
+    height: 50px;
+    padding: 5px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    
 }
 .contenido article p:first-of-type{
     font-size: 18px;

@@ -8,15 +8,33 @@
     background-color: #EAC926 ;
     font-family: 'roboto';
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: 10px;
   }
+  /* Estilo de íconos */
 i{
   font-size: 2em;
 }
+
+.burger-menu{
+  background-color: #1259c3;
+  color: #ebebeb;
+  border-radius: 10px;
+  padding: 10px;
+
+}
+
+.fa-bars{
+  background-color: #1259c3;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-top: 3vh;
+}
+/* Estilo de listas */
 ul{
   list-style: none;
 }
@@ -29,22 +47,47 @@ ul{
 }
 /* Estilo de los íconos */
 .my-icon{
-  color:  #1259c3;
+  color:#1259c3;
+  
 }
 
-/* Media Queries */
+/* Media Queries para Mobile */
 @media (max-width: 768px) {
   .burger-menu{
       display: flex;
       justify-content: center;
+      cursor: pointer;
   }
   .main-header{
     width: 100%;
   }
-  
+  .nav-index{
+    display: none;
+  }
+  .contenido{
+    width: 100%; 
+  }
+  .contenido article h4{
+    display: none;
+  }
 }
-@media (min-width: 769px) {
+
+/* Media Queries para Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
   .burger-menu {
       display: none;
+  }
+.detalles-articulo{
+  box-shadow: 0px 0px 10px rgb(100, 100, 100)
+}
+}
+
+/* Media Queries para Desktop (mínimo 1024px) */
+@media (min-width: 1024px) {
+  .nav {
+      box-shadow: none;
+  }
+  .burger-menu{
+    display: none;
   }
 }
