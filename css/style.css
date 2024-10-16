@@ -1,38 +1,135 @@
-/* Estilo para el logo */
-.logo {
-    width: 200px;
-    height: 100px;
-  }
+@import url("index.css");
+@import url("login.css");
+@import url("register.css");
+
+:root {
+  --color-amarillo: #EAC926;
+  --color-azul: #03264C;
+  --color-celeste: #1259c3;
+  --color-gris-oscuro: #666;
+  --color-gris-claro: #ebebeb;
+  --color-verde: #39b54a;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
 /* Estilos para la barra de navegación*/
 .main-header {
-    background-color: #EAC926 ;
+    background-color: var(--color-amarillo) ;
     font-family: 'roboto';
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+/* Contenedor de la parte superior del nav (logo y barra de búsqueda) */
+.nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 10px; /* Espacio entre la parte superior e inferior */
+}
+/* Estilo para el logo */
+.main-header .logo {
+  width: 150px;
+  height: auto;
+  }
+
+  .main-header form{
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
-    padding: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    flex-direction: row;
   }
+
+/* Input de búsqueda */
+.main-header input[type="search"] {
+  flex-grow: 1;
+  width: 100%; /* Ajusta el tamaño del input */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--color-gris-oscuro);
+  border-radius: 4px 0 0 4px;
+}
+/* Icono de búsqueda */
+.main-header button {
+  background-color: var(--color-azul);
+  color: white;
+  border: 1px solid var(--color-azul);;
+  padding: 10px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Icono de búsqueda */
+.main-header button i {
+  font-size: 1.2rem;
+}
+.info-texto{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+/* Contenedor de la parte inferior del nav (menú principal y usuario) */
+.nav-bottom {
+  display: flex;
+  justify-content: space-between; /* Menú a la izquierda, cuenta a la derecha */
+  align-items: center;
+  border-top: 1px solid var(--color-gris-claro);
+  padding-top: 10px;
+}
+/* Estilo de la navegación */
+.nav-index {
+  display: flex;
+  align-items: center;
+}
+.nav-index ul {
+  display: flex;
+  list-style: none;
+  gap: 20px; /* Espacio entre elementos */
+}
+.nav-index ul li i {
+  margin-left: 5px;
+}
   /* Estilo de íconos */
 i{
   font-size: 2em;
 }
-
+/* Menu hamburguesa*/
 .burger-menu{
-  background-color: #1259c3;
-  color: #ebebeb;
-  border-radius: 10px;
-  padding: 10px;
-
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border: 2px solid #1259c3;
+  background-color: var(--color-celeste);
+  color: var(--color-gris-claro);
+  display: block;
+  width: 50px;
+  text-align: center;
 }
-
 .fa-bars{
-  background-color: #1259c3;
-  color: white;
+  background-color: var(--color-celeste);
+  color: var(--color-gris-claro);
   padding: 5px;
   border-radius: 5px;
   font-size: 20px;
   margin-top: 3vh;
+}
+.banner-home{
+  /* width: 100vw; */
+  height: auto;
+  display: block; /* Elimina espacios en blanco entre el contenedor y la imagen */
+  object-fit:fill; 
+  margin: 0 auto;
+}
+.banner-container {
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
 }
 /* Estilo de listas */
 ul{
@@ -42,8 +139,8 @@ ul{
 .footer{
     font-family: 'roboto';
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 /* Estilo de los íconos */
 .my-icon{
@@ -54,18 +151,24 @@ ul{
 /* Media Queries para Mobile */
 @media (max-width: 768px) {
   .burger-menu{
-      display: flex;
-      justify-content: center;
+      display: block;
       cursor: pointer;
+      margin: 0 auto;
   }
   .main-header{
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
+  }
+  #navsearch{
+    width: 100%;
+    margin: 10px 0;
   }
   .nav-index{
     display: none;
   }
-  .contenido{
-    width: 100%; 
+  .productos{
+    flex-direction: column;
   }
   .contenido article h4{
     display: none;
@@ -73,12 +176,30 @@ ul{
 }
 
 /* Media Queries para Tablets */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1023px) {
   .burger-menu {
       display: none;
   }
+
 .detalles-articulo{
   box-shadow: 0px 0px 10px rgb(100, 100, 100)
+}
+.contenido{
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.contenido article h4{
+  display: block; /* Muestra la descripción */
+}
+.productos{
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+}
+.producto{
+  flex-basis: 48%;
 }
 }
 
@@ -89,5 +210,14 @@ ul{
   }
   .burger-menu{
     display: none;
+  }
+  .icono-camion{
+    top: -10px;
+    right: 10px;
+  }
+  .contenido{
+    width: 90%;
+    margin: 0 auto;
+    gap: 10px;
   }
 }
