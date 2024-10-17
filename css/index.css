@@ -7,6 +7,7 @@
     width: 100%;
     gap: 1rem;
 }
+/* Contenedor principal de productos */
 .productos{
     display: flex;
     justify-content: space-between; /* Espacio entre los productos */
@@ -27,8 +28,20 @@ article{
     box-sizing: border-box;
     width: auto;
     padding: 10px;
+    transition: box-shadow 0.3s ease;
 }
-
+article:hover {
+    box-shadow: 0px 0px 20px rgb(150, 150, 150);
+}
+article h4 {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+article:hover h4 {
+    opacity: 1;
+    visibility: visible;
+  }
 /* Detalles del artículo */
 .detalles-articulo {
     position: relative;
@@ -67,7 +80,11 @@ article{
     height: 55px;
     padding: 5px;
     overflow: hidden;
+    transition: transform 0.4s ease;
 }
+article:hover .icono-camion {
+    transform: rotate(-90deg); /* Gira el ícono 90° hacia arriba */
+  }
 .contenido article p:first-of-type{
     font-size: 18px;
 }

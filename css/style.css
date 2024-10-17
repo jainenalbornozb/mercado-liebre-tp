@@ -33,7 +33,7 @@
 }
 /* Estilo para el logo */
 .main-header .logo {
-  width: 150px;
+  width: 100%;
   height: auto;
   }
 
@@ -70,6 +70,9 @@
 /* Icono de búsqueda */
 .main-header button i {
   font-size: 1.2rem;
+}
+.fa-hand-holding-dollar{
+  margin-right: 10px;
 }
 .info-texto{
   display: flex;
@@ -116,10 +119,9 @@ i{
 .fa-bars{
   background-color: var(--color-celeste);
   color: var(--color-gris-claro);
-  padding: 5px;
   border-radius: 5px;
-  font-size: 20px;
-  margin-top: 3vh;
+  font-size: 1em;
+  margin-top: 5px;
 }
 .banner-home{
   /* width: 100vw; */
@@ -140,16 +142,51 @@ ul{
     font-family: 'roboto';
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    padding-bottom: 50px;
+}
+.footer section{
+  flex: 1;
+  padding: 0 15px;
+  text-align: center;
+  max-width: 300px;
 }
 /* Estilo de los íconos */
 .my-icon{
   color:#1259c3;
-  
+  transition: color 0.3s ease;
+}
+.my-icon:hover {
+  color: #ffcc00;
+}
+.footer small {
+  position: absolute;
+  bottom: 10px; 
+  left: 20px;
+  font-size: 12px;
+  color: #333;
 }
 
-/* Media Queries para Mobile */
-@media (max-width: 768px) {
+/* Media Queries Mobile min-width 0px */
+@media (min-width: 0px) and (max-width: 374px){
+  .contenido article h4{
+    display: none;
+  }
+  .icono-camion{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    left: 200px;
+    width: 16.5%;
+  }
+}
+
+/* Media Queries Mobile max-width 767px */
+@media (max-width: 767px) {
   .burger-menu{
       display: block;
       cursor: pointer;
@@ -157,11 +194,35 @@ ul{
   }
   .main-header{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+  }
+  .logo {
+    margin-bottom: 10px;
   }
   #navsearch{
     width: 100%;
+    max-width: 250px;
+    margin: 10px auto;
+    border-radius: 25px;
+  }
+  .nav-top {
+    display: flex;
+    flex-direction: column; /* Apila el logo, buscador y texto */
+    align-items: center;
+    width: 100%;
+  }
+  .nav-top form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .info-texto{
+    display: block;
+    width: 100%;
+    text-align: center;
     margin: 10px 0;
   }
   .nav-index{
@@ -170,17 +231,31 @@ ul{
   .productos{
     flex-direction: column;
   }
+  .productos-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .icono-camion{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+  }
   .contenido article h4{
     display: none;
   }
 }
 
-/* Media Queries para Tablets */
-@media (min-width: 769px) and (max-width: 1023px) {
+/* Media Queries Tablets min-width 769px*/
+@media (min-width: 768px) and (max-width: 1023px) {
   .burger-menu {
       display: none;
   }
-
+.nav-index{
+  display: flex; /* Muestra el menú de navegación */
+  justify-content: space-around;
+  width: 100%;
+}
 .detalles-articulo{
   box-shadow: 0px 0px 10px rgb(100, 100, 100)
 }
@@ -201,23 +276,71 @@ ul{
 .producto{
   flex-basis: 48%;
 }
+.icono-camion{
+  top: -5px;
+  right: 15px;
+  left: 250px;
+}
 }
 
-/* Media Queries para Desktop (mínimo 1024px) */
-@media (min-width: 1024px) {
+/* Media Queries Desktop min width 1024px */
+@media (min-width: 1024px) and (max-width: 1439px) {
   .nav {
-      box-shadow: none;
+  box-shadow: none;
   }
   .burger-menu{
     display: none;
   }
-  .icono-camion{
+.icono-camion{
+    position: absolute;
     top: -10px;
-    right: 10px;
+    right:-25px;
+    left: 150px;
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+    z-index: 1;
+    font-size: 1.7em;
   }
-  .contenido{
-    width: 90%;
+.contenido{
+    width: 100%;
     margin: 0 auto;
-    gap: 10px;
+    gap: 15px;
   }
+.producto{
+  display: flex;
+  justify-content: space-between; /* Espacio entre los productos */
+  flex-wrap: nowrap; /* Hace que los productos se alineen en filas si el espacio es pequeño */
+}
+.producto img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.detalles-articulo {
+  position: relative;
+  border-top: 1px solid #ebebeb; 
+  background-color: white;  
+  display: flex;
+  flex-direction: column;
+}
+  }
+/* Media Queries Desktop min width 1440px */
+@media (min-width: 1440px) and (max-width: 2560px){
+  .burger-menu{
+    display: none;
+  }
+  .icono-camion{
+    width: 13%; 
+    height: 55px;
+    padding: 10px;
+    left: 250px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    align-content: center;
+  }
+  .contenido article h4{
+    display: block;
+  }
+
 }
